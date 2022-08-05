@@ -68,6 +68,7 @@ footer {
     border-radius: 15px;
     box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
     background-color: green;
+    max-height: 100px;
 }
 
 .challenge {
