@@ -82,3 +82,20 @@ footer {
     position: relative;
     top: -15px;
 }
+
+.player-name {
+    position: relative;
+    top: -160px;
+}
+
+.slain-goblin {
+    width: 300px;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
+    background-color: rgb(78, 4, 198);
+    max-height: 100px;
+    pointer-events: none;
+}

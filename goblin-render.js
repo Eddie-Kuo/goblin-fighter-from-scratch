@@ -7,6 +7,11 @@ export function renderGoblin(newGoblin) {
     hpTag.textContent = `HP: (${newGoblin.HP})`;
     nameDiv.classList.add('goblin');
 
+    if (newGoblin.HP <= 0) {
+        nameDiv.classList.remove('goblin');
+        nameDiv.classList.add('slain-goblin');
+    }
+
     nameDiv.append(hpTag);
     return nameDiv;
 }

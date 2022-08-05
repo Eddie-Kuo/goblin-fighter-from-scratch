@@ -5,13 +5,18 @@ const goblinListEl = document.querySelector('.goblin-list');
 const goblinInputEl = document.querySelector('.goblin-input');
 const goblinAddButt = document.querySelector('.goblin-button');
 const goblinScoreEl = document.querySelector('.score-display');
+const userInputEl = document.querySelector('.user-input');
+const userAddButt = document.querySelector('.user-button');
+const userNameEl = document.querySelector('.player-name');
+
+
 
 const playerHealthEl = document.querySelector('.player-health');
 const playerAvatarEl = document.querySelector('.player-avatar');
 
 
 let goblinsSlain = 0;
-let playerHP = 1;
+let playerHP = 15;
 
 const goblinsArr = [
     {
@@ -27,6 +32,11 @@ const goblinsArr = [
         HP: 1,
     },
 ];
+
+// function to be able input your name as the player
+userAddButt.addEventListener('click', () =>{
+    userNameEl.textContent = `${userInputEl.value} the Goblin Slayer`;
+});
 
 
 // Input and button to add in new challengers to the goblin list
@@ -65,19 +75,20 @@ function displayGoblins() {
                 alert(`You have been defeated!!`);
                 playerAvatarEl.textContent = `😵`;
             }
-
             if (goblin.HP === 0) {
                 goblinsSlain++;
+                goblinEl.disabled = true;
                 goblinScoreEl.textContent = `You have defeated ${goblinsSlain} goblin(s)`;
+                alert(`You have defeated ${goblin.name}`);
             }
 
             displayGoblins();
         });
-  
         goblinListEl.append(goblinEl);
     }
   
 }
+
 
 
 
