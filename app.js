@@ -16,7 +16,7 @@ const playerAvatarEl = document.querySelector('.player-avatar');
 
 
 let goblinsSlain = 0;
-let playerHP = 15;
+let playerHP = 3;
 
 const goblinsArr = [
     {
@@ -66,7 +66,7 @@ function displayGoblins() {
             if (Math.random() > .5) {
                 alert(`You hit ${goblin.name}!`);
                 goblin.HP--;}
-            if (Math.random() > .8) {
+            if (Math.random() < .8) {
                 alert(`You have been hit by ${goblin.name}!`);
                 playerHP--;
                 playerHealthEl.textContent = `HP: (${playerHP})`;
