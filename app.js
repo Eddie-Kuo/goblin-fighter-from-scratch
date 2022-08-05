@@ -4,10 +4,14 @@ const goblinListEl = document.querySelector('.goblin-list');
 
 const goblinInputEl = document.querySelector('.goblin-input');
 const goblinAddButt = document.querySelector('.goblin-button');
+const goblinScoreEl = document.querySelector('.score-display');
+
+const playerHealthEl = document.querySelector('.player-health');
+const playerAvatarEl = document.querySelector('.player-avatar');
 
 
-
-let goblinHP = 5;
+let goblinsSlain = 0;
+let playerHP = 1;
 
 const goblinsArr = [
     {
@@ -16,11 +20,11 @@ const goblinsArr = [
     },
     {
         name: 'Sara',
-        HP: 6,
+        HP: 1,
     },
     {
         name: 'Brodie',
-        HP: 5,
+        HP: 1,
     },
 ];
 
@@ -52,6 +56,21 @@ function displayGoblins() {
             if (Math.random() > .5) {
                 alert(`You hit ${goblin.name}!`);
                 goblin.HP--;}
+            if (Math.random() > .8) {
+                alert(`You have been hit by ${goblin.name}!`);
+                playerHP--;
+                playerHealthEl.textContent = `HP: (${playerHP})`;
+            }
+            if (playerHP === 0) {
+                alert(`You have been defeated!!`);
+                playerAvatarEl.textContent = `😵`;
+            }
+
+            if (goblin.HP === 0) {
+                goblinsSlain++;
+                goblinScoreEl.textContent = `You have defeated ${goblinsSlain} goblin(s)`;
+            }
+
             displayGoblins();
         });
   
