@@ -1,6 +1,11 @@
-
+import { renderGoblin } from './goblin-render.js';
 
 const goblinListEl = document.querySelector('.goblin-list');
+
+const goblinInputEl = document.querySelector('.goblin-input');
+const goblinAddButt = document.querySelector('.goblin-button');
+
+
 
 let goblinHP = 5;
 
@@ -19,30 +24,42 @@ const goblinsArr = [
     },
 ];
 
-for (let goblin of goblinsArr) {
 
-    const goblinEl = renderGoblin(goblin);
-    
-    goblinEl.addEventListener('click', () => {
-        if (Math.random() > .5) 
-            alert(`You hit ${goblin.name}!`); // need to subtract HP from goblins when hit
-    });
+// Input and button to add in new challengers to the goblin list
+function addGoblin() {
+    const newChallenger = {
+        name: goblinInputEl.value,
+        HP: 3
+    };
+    goblinsArr.push(newChallenger);
+    renderGoblin(newChallenger);
+}
 
-    goblinListEl.append(goblinEl);
+goblinAddButt.addEventListener('click', () => {
+    addGoblin();
+    displayGoblins();
+});
+
+//function to display goblins and control of their event listeners to manipulate HP 
+function displayGoblins() {
+    goblinListEl.textContent = '';
+
+    for (let goblin of goblinsArr) {
+
+        const goblinEl = renderGoblin(goblin);
+  
+        goblinEl.addEventListener('click', () => {
+            if (Math.random() > .5) {
+                alert(`You hit ${goblin.name}!`);
+                goblin.HP--;}
+            displayGoblins();
+        });
+  
+        goblinListEl.append(goblinEl);
+    }
+  
 }
 
 
-function renderGoblin(newGoblin) {
 
-    const nameDiv = document.createElement('div');
-    const hpTag = document.createElement('p');
-
-    nameDiv.textContent = newGoblin.name;
-    hpTag.textContent = `HP: (${newGoblin.HP})`;
-    nameDiv.classList.add('goblin');
-
-    nameDiv.append(hpTag);
-    return nameDiv;
-}
-
-// set default HP for when the new goblin generates upon add challenger 
+displayGoblins();
