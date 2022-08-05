@@ -60,7 +60,7 @@ footer {
     justify-content: space-around
 }
 
-.goblin {
+/* .goblin {
     width: 300px;
     padding: 25px;
     margin: 10px;
@@ -69,6 +69,23 @@ footer {
     box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
     background-color: green;
     max-height: 100px;
+} */
+
+.goblin {
+    background-image: url("../assets/evil-minion.png");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.slain-goblin {
+    background-image: url("../assets/happy-minion.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .challenge {
@@ -88,7 +105,7 @@ footer {
     top: -160px;
 }
 
-.slain-goblin {
+/* .slain-goblin {
     width: 300px;
     padding: 25px;
     margin: 10px;
@@ -98,4 +115,4 @@ footer {
     background-color: rgb(78, 4, 198);
     max-height: 100px;
     pointer-events: none;
-}
+} */

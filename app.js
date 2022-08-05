@@ -35,7 +35,7 @@ const goblinsArr = [
 
 // function to be able input your name as the player
 userAddButt.addEventListener('click', () =>{
-    userNameEl.textContent = `${userInputEl.value} the Goblin Slayer`;
+    userNameEl.textContent = `${userInputEl.value} the Minion Purifier`;
 });
 
 
@@ -78,7 +78,7 @@ function displayGoblins() {
             if (goblin.HP === 0) {
                 goblinsSlain++;
                 goblinEl.disabled = true;
-                goblinScoreEl.textContent = `You have defeated ${goblinsSlain} goblin(s)`;
+                goblinScoreEl.textContent = `You have purified ${goblinsSlain} minions(s)`;
                 alert(`You have defeated ${goblin.name}`);
             }
 
