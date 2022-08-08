@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     font-family: 'Rubik', san-serif;
-    background: var(--background);
+    background-color: lightblue;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -17,7 +17,6 @@ header {
     top: 0;
     display: flex;
     align-items: center;
-    background-color: var(--header-background);
 }
 
 main {
@@ -31,5 +30,89 @@ footer {
     font-size: .8em;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--footer-background);
 }
+
+.score-display {
+    width: 100%;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    background-color: lightslategray;
+    border-radius: 15px;
+    box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
+}
+
+.player-stats {
+    height: 200px;
+    width: 300px;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
+}
+.player-stats {
+    background-color: lightcoral;
+}
+
+.game-body{
+    display: flex;
+    justify-content: space-around
+}
+
+/* .goblin {
+    width: 300px;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
+    background-color: green;
+    max-height: 100px;
+} */
+
+.goblin {
+    background-image: url("../assets/evil-minion.png");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.slain-goblin {
+    background-image: url("../assets/happy-minion.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.challenge {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.player-avatar {
+    zoom: 500%;
+    position: relative;
+    top: -15px;
+}
+
+.player-name {
+    position: relative;
+    top: -160px;
+}
+
+/* .slain-goblin {
+    width: 300px;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 10px 10px 26px 1px rgba(0,0,0,0.64);
+    background-color: rgb(78, 4, 198);
+    max-height: 100px;
+    pointer-events: none;
+} */
